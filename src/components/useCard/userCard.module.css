@@ -1,0 +1,11 @@
+.fixedImage {
+  width: 300px !important;
+  height: 400px;
+  object-fit: cover;
+}
+
+@media (max-width: 500.98px) {
+  .fixedImage {
+    width: 100% !important;
+  }
+}
