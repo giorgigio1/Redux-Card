@@ -1,11 +1,19 @@
 .fixedImage {
   width: 300px !important;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
+  border-radius: 50% !important;
 }
 
 @media (max-width: 500.98px) {
   .fixedImage {
-    width: 100% !important;
+    width: 250px !important;
+    height: 250px;
+  }
+}
+
+@media (max-width: 500.98px) {
+  .userCard {
+    height: 100vh;
   }
 }

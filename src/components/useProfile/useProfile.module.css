@@ -1,6 +1,6 @@
 .fixedImage {
   width: 300px !important;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
   padding: 20px;
   border-radius: 50%;

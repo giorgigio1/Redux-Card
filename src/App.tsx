@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const App: React.FC = () => {
   return (
-    <div className="bg-dark pt-0 w-100 min-vh-100">
+    <div className="bg-secondary pt-0 w-100 min-vh-100">
       <Router>
         <div className="container">
           <Routes>

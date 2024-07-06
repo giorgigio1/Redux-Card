@@ -9,13 +9,12 @@ import { Link } from "react-router-dom";
 
 const UserProfile: React.FC = () => {
   const user = useSelector((state: RootState) => state.user);
-  console.log("user.socialNetworks.instagram", user.socialNetworks.instagram);
   return (
-    <Card className={`bg-secondary mx-auto ${styles.profileCard}`}>
+    <Card className={`bg-dark mx-auto ${styles.profileCard}`}>
       <Card.Img
         variant="top"
         src={user.picture}
-        className={`rounded-circle ${styles.fixedImage}`}
+        className={`rounded-circle mx-auto ${styles.fixedImage}`}
       />
       <Card.Body>
         <Card.Title className="text-center text-white">

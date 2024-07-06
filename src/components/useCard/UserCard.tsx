@@ -34,10 +34,10 @@ const UserCard: React.FC = () => {
   };
 
   return (
-    <div className="card bg-secondary">
+    <div className={`card bg-dark ${styles.userCard}`}>
       <img
         src={picture}
-        className={`card-img-top m-4 ${styles.fixedImage}`}
+        className={`card-img-top m-4 mx-auto ${styles.fixedImage}`}
         alt="..."
       />
       <div className="card-body">
@@ -49,6 +49,7 @@ const UserCard: React.FC = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        {name.length < 0 && <p className="text-danger">Error!</p>}
         <input
           type="text"
           className="form-control m-2"
