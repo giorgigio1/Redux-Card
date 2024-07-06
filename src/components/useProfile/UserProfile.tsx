@@ -5,10 +5,11 @@ import { RootState } from "../../store";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { FaInstagram, FaFacebook, FaTwitter, FaDiscord } from "react-icons/fa";
 import styles from "./useProfile.module.css";
+import { Link } from "react-router-dom";
 
-const UserProfile2: React.FC = () => {
+const UserProfile: React.FC = () => {
   const user = useSelector((state: RootState) => state.user);
-  console.log("user", user);
+  console.log("user.socialNetworks.instagram", user.socialNetworks.instagram);
   return (
     <Card className={`bg-secondary mx-auto ${styles.profileCard}`}>
       <Card.Img
@@ -22,7 +23,7 @@ const UserProfile2: React.FC = () => {
           <BsFillCheckCircleFill color="aqua" style={{ marginLeft: 10 }} />
         </Card.Title>
         <Card.Text className="text-center text-white">Day Trader</Card.Text>
-        <div className="d-flex flex-column my-5">
+        <div className={`d-flex flex-column my-5 ${styles.buttonBox}`}>
           <Button variant="light m-1" className="mr-2">
             ONLINE TRADING COURSES
           </Button>
@@ -35,13 +36,21 @@ const UserProfile2: React.FC = () => {
           <Button variant="light m-1">MERCHANT</Button>
         </div>
         <div
-          className="mx-auto mt-5 d-flex justify-content-around w-75"
+          className={`mx-auto mt-5 d-flex justify-content-around w-75 ${styles.iconsBox}`}
           style={{ borderBottom: "2px solid white", height: "50px" }}
         >
-          <FaInstagram color="white" size={30} className="ml-2" />
-          <FaFacebook color="white" size={30} className="ml-2" />
-          <FaTwitter color="white" size={30} className="ml-2" />
-          <FaDiscord color="white" size={30} className="ml-2" />
+          <Link to={user.socialNetworks.instagram} target="_blank">
+            <FaInstagram color="white" size={30} className="ml-2" />
+          </Link>
+          <Link to={user.socialNetworks.facebook} target="_blank">
+            <FaFacebook color="white" size={30} className="ml-2" />
+          </Link>
+          <Link to={user.socialNetworks.twitter} target="_blank">
+            <FaTwitter color="white" size={30} className="ml-2" />
+          </Link>
+          <Link to={user.socialNetworks.discord} target="_blank">
+            <FaDiscord color="white" size={30} className="ml-2" />
+          </Link>
         </div>
         <Card.Title className="text-center text-white mt-2 ">
           <h6>
@@ -54,4 +63,4 @@ const UserProfile2: React.FC = () => {
   );
 };
 
-export default UserProfile2;
+export default UserProfile;
